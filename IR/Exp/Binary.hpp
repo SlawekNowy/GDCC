@@ -109,10 +109,11 @@ namespace GDCC::IR
    GDCC_IR_Exp_BinaryDecl(Div);
    GDCC_IR_Exp_BinaryDecl(Mod);
    GDCC_IR_Exp_BinaryDecl(Mul);
+   GDCC_IR_Exp_BinaryDecl(NulAnd);
+   GDCC_IR_Exp_BinaryDecl(NulOrI);
    GDCC_IR_Exp_BinaryDecl(ShL);
    GDCC_IR_Exp_BinaryDecl(ShR);
    GDCC_IR_Exp_BinaryDecl(Sub);
 }
 
 #endif//GDCC__IR__Exp__Binary_H__
-

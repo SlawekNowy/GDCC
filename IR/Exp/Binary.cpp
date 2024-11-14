@@ -33,6 +33,8 @@ namespace GDCC::IR
    GDCC_IR_Exp_BinaryImpl(Sub, -)
 
    GDCC_IR_Exp_BinaryImplCreate(AddPtrRaw)
+   GDCC_IR_Exp_BinaryImplCreate(NulAnd)
+   GDCC_IR_Exp_BinaryImplCreate(NulOrI)
 
    //
    // Exp_Binary constructor
@@ -86,7 +88,40 @@ namespace GDCC::IR
 
       throw TypeError();
    }
+
+   //
+   // Exp_NulAnd::v_getType
+   //
+   Type Exp_NulAnd::v_getType() const
+   {
+      return expL->getValue() ? expR->getType() : expL->getType();
+   }
+
+   //
+   // Exp_NulAnd::v_getValue
+   //
+   Value Exp_NulAnd::v_getValue() const
+   {
+      auto lhs = expL->getValue();
+      return lhs ? expR->getValue() : lhs;
+   }
+
+   //
+   // Exp_NulOrI::v_getType
+   //
+   Type Exp_NulOrI::v_getType() const
+   {
+      return expL->getValue() ? expL->getType() : expR->getType();
+   }
+
+   //
+   // Exp_NulOrI::v_getValue
+   //
+   Value Exp_NulOrI::v_getValue() const
+   {
+      auto lhs = expL->getValue();
+      return lhs ? lhs : expR->getValue();
+   }
 }
 
 // EOF
-

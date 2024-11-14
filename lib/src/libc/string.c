@@ -1,6 +1,6 @@
 //-----------------------------------------------------------------------------
 //
-// Copyright(C) 2014-2017 David Hill
+// Copyright(C) 2014-2017 David Hill, 2020 Zoe Elsie Watson
 //
 // See COPYLIB for license information.
 //
@@ -441,11 +441,134 @@ char *strerror(int errnum)
 {
    switch(errnum)
    {
-   case EBADF:  return (char *)"bad file descriptor";
-   case EDOM:   return (char *)"domain error";
-   case EILSEQ: return (char *)"illegal sequence";
-   case ERANGE: return (char *)"range error";
-   default:     return (char *)"unknown error";
+   case E2BIG:           return (char *)"argument list too long";
+   case EACCES:          return (char *)"permission denied";
+   case EADDRINUSE:      return (char *)"address already in use";
+   case EADDRNOTAVAIL:   return (char *)"address not available";
+   case EAFNOSUPPORT:    return (char *)"address family not supported";
+   case EAGAIN:          return (char *)"resource temporarily unavailable";
+   case EALREADY:        return (char *)"connection already in progress";
+   case EBADE:           return (char *)"invalid exchange";
+   case EBADF:           return (char *)"bad file descriptor";
+   case EBADFD:          return (char *)"file descriptor in bad state";
+   case EBADMSG:         return (char *)"bad message";
+   case EBADR:           return (char *)"invalid request descriptor";
+   case EBADRQC:         return (char *)"invalid request code";
+   case EBADSLT:         return (char *)"invalid slot";
+   case EBUSY:           return (char *)"device or resource busy";
+   case ECANCELED:       return (char *)"operation canceled";
+   case ECHILD:          return (char *)"no child process";
+   case ECHRNG:          return (char *)"channel number out of range";
+   case ECOMM:           return (char *)"communication error on send";
+   case ECONNABORTED:    return (char *)"connection aborted";
+   case ECONNREFUSED:    return (char *)"connection refused";
+   case ECONNRESET:      return (char *)"connection reset";
+   case EDEADLK:         return (char *)"resource deadlock avoided";
+   case EDEADLOCK:       return (char *)"file locking deadlock error";
+   case EDESTADDRREQ:    return (char *)"destination address required";
+   case EDOM:            return (char *)"out of domain";
+   case EDQUOT:          return (char *)"disk quota exceeded";
+   case EEXIST:          return (char *)"file exists";
+   case EFAULT:          return (char *)"bad address";
+   case EFBIG:           return (char *)"file too large";
+   case EHOSTDOWN:       return (char *)"host is down";
+   case EHOSTUNREACH:    return (char *)"host is unreachable";
+   case EHWPOISON:       return (char *)"memory page has hardware error";
+   case EIDRM:           return (char *)"identifier removed";
+   case EILSEQ:          return (char *)"illegal byte sequence";
+   case EINPROGRESS:     return (char *)"operation in progress";
+   case EINTR:           return (char *)"interrupted function call";
+   case EINVAL:          return (char *)"invalid argument";
+   case EIO:             return (char *)"input/output error";
+   case EISCONN:         return (char *)"socket is connected";
+   case EISDIR:          return (char *)"is a directory";
+   case EISNAM:          return (char *)"is a named type file";
+   case EKEYEXPIRED:     return (char *)"key has expired";
+   case EKEYREJECTED:    return (char *)"key was rejected by service";
+   case EKEYREVOKED:     return (char *)"key has been revoked";
+   case EL2HLT:          return (char *)"level 2 halted";
+   case EL2NSYNC:        return (char *)"level 2 not synchronized";
+   case EL3HLT:          return (char *)"level 3 halted";
+   case EL3RST:          return (char *)"level 3 reset";
+   case ELIBACC:         return (char *)"cannot access a needed shared object";
+   case ELIBBAD:         return (char *)"accessing a corrupted shared object";
+   case ELIBMAX:         return (char *)"attempting to link too many objects";
+   case ELIBSCN:         return (char *)"section corrupted";
+   case ELIBEXEC:        return (char *)"cannot exec shared object";
+   case ELNRANGE:        return (char *)"link number out of range";
+   case ELOOP:           return (char *)"too many levels of symbolic links";
+   case EMEDIUMTYPE:     return (char *)"wrong medium type";
+   case EMFILE:          return (char *)"too many open files";
+   case EMLINK:          return (char *)"too many links";
+   case EMSGSIZE:        return (char *)"message too long";
+   case EMULTIHOP:       return (char *)"multihop attempted";
+   case ENAMETOOLONG:    return (char *)"filename too long";
+   case ENETDOWN:        return (char *)"network is down";
+   case ENETRESET:       return (char *)"connection aborted by network";
+   case ENETUNREACH:     return (char *)"network unreachable";
+   case ENFILE:          return (char *)"too many open files";
+   case ENOANO:          return (char *)"no anode";
+   case ENOBUFS:         return (char *)"no buffer space available";
+   case ENODATA:         return (char *)"no message on read queue";
+   case ENODEV:          return (char *)"no such device";
+   case ENOENT:          return (char *)"no such file or directory";
+   case ENOEXEC:         return (char *)"exec format error";
+   case ENOKEY:          return (char *)"required key not available";
+   case ENOLCK:          return (char *)"no locks available";
+   case ENOLINK:         return (char *)"link has been severed";
+   case ENOMEDIUM:       return (char *)"no medium found";
+   case ENOMEM:          return (char *)"cannot allocate memory";
+   case ENOMSG:          return (char *)"no message of desired type";
+   case ENONET:          return (char *)"not on a network";
+   case ENOPKG:          return (char *)"package not installed";
+   case ENOPROTOOPT:     return (char *)"protocol not available";
+   case ENOSPC:          return (char *)"no space left on device";
+   case ENOSR:           return (char *)"no stream resources";
+   case ENOSTR:          return (char *)"not a stream";
+   case ENOSYS:          return (char *)"function not implemented";
+   case ENOTBLK:         return (char *)"block device required";
+   case ENOTCONN:        return (char *)"socket not connected";
+   case ENOTDIR:         return (char *)"not a directory";
+   case ENOTEMPTY:       return (char *)"directory not empty";
+   case ENOTRECOVERABLE: return (char *)"state not recoverable";
+   case ENOTSOCK:        return (char *)"not a socket";
+   case ENOTSUP:         return (char *)"operation not supported";
+   case ENOTTY:          return (char *)"inappropriate control operation";
+   case ENOTUNIQ:        return (char *)"name not unique on network";
+   case ENXIO:           return (char *)"no such device or address";
+   case EOPNOTSUPP:      return (char *)"operation not supported on socket";
+   case EOVERFLOW:       return (char *)"value too large to be stored";
+   case EOWNERDEAD:      return (char *)"owner died";
+   case EPERM:           return (char *)"operation not permitted";
+   case EPFNOSUPPORT:    return (char *)"protocol family not supported";
+   case EPIPE:           return (char *)"broken pipe";
+   case EPROTO:          return (char *)"protocol error";
+   case EPROTONOSUPPORT: return (char *)"protocol not supported";
+   case EPROTOTYPE:      return (char *)"protocol wrong type for socket";
+   case ERANGE:          return (char *)"result too large";
+   case EREMCHG:         return (char *)"remote address changed";
+   case EREMOTE:         return (char *)"object is remote";
+   case EREMOTEIO:       return (char *)"remote i/o error";
+   case ERESTART:        return (char *)"interrupted system call";
+   case ERFKILL:         return (char *)"operation impossible from rf-kill";
+   case EROFS:           return (char *)"read-only filesystem";
+   case ESHUTDOWN:       return (char *)"cannot send after endpoint shutdown";
+   case ESPIPE:          return (char *)"invalid seek";
+   case ESOCKTNOSUPPORT: return (char *)"socket type not supported";
+   case ESRCH:           return (char *)"no such process";
+   case ESTALE:          return (char *)"stale file handle";
+   case ESTRPIPE:        return (char *)"streams pipe error";
+   case ETIME:           return (char *)"timer expired";
+   case ETIMEDOUT:       return (char *)"connection timed out";
+   case ETOOMANYREFS:    return (char *)"too many references";
+   case ETXTBSY:         return (char *)"text file busy";
+   case EUCLEAN:         return (char *)"structure needs cleaning";
+   case EUNATCH:         return (char *)"protocol driver not attached";
+   case EUSERS:          return (char *)"too many users";
+   case EWOULDBLOCK:     return (char *)"operation would block";
+   case EXDEV:           return (char *)"improper link";
+   case EXFULL:          return (char *)"exchange full";
+   default:              return (char *)"unknown error";
    }
 }
 
@@ -567,4 +690,3 @@ char __str_ars *strstr_str(char __str_ars const *text, char __str_ars const *wor
 }
 
 // EOF
-

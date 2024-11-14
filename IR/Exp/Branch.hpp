@@ -291,4 +291,3 @@ namespace GDCC::IR
 }
 
 #endif//GDCC__IR__Exp__Branch_H__
-

@@ -160,6 +160,8 @@ namespace GDCC::IR
    GDCC_IR_Exp_DeclCreateE2(Mul);
    GDCC_IR_Exp_DeclCreateE1(Neg);
    GDCC_IR_Exp_DeclCreateE1(Not);
+   GDCC_IR_Exp_DeclCreateE2(NulAnd);
+   GDCC_IR_Exp_DeclCreateE2(NulOrI);
    GDCC_IR_Exp_DeclCreateE2(ShL);
    GDCC_IR_Exp_DeclCreateE2(ShR);
    GDCC_IR_Exp_DeclCreateE2(Sub);
@@ -226,4 +228,3 @@ namespace GDCC::IR
 }
 
 #endif//GDCC__IR__Exp_H__
-

@@ -1,6 +1,6 @@
 //-----------------------------------------------------------------------------
 //
-// Copyright(C) 2016 David Hill
+// Copyright(C) 2016 David Hill, 2020 Zoe Elsie Watson
 //
 // See COPYLIB for license information.
 //
@@ -26,6 +26,7 @@ typedef unsigned int __clock_t;
 typedef long long __intmax_t;
 typedef signed int __intptr_t;
 typedef int __max_align_t;
+typedef int __mode_t;
 typedef long int __off_t;
 typedef int __ptrdiff_t;
 typedef int __sig_atomic_t;
@@ -51,4 +52,3 @@ struct __fexcept_t;
 struct __mbstate_t;
 
 #endif//__GDCC_Header__C__bits__types_h__
-

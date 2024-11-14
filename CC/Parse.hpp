@@ -81,6 +81,8 @@ namespace GDCC::CC
       virtual ExpCRef getExp_LAnd(Scope &scope);
       virtual ExpCRef getExp_LOrI(Scope &scope);
       virtual ExpCRef getExp_Cond(Scope &scope);
+      virtual ExpCRef getExp_NAnd(Scope &scope);
+      virtual ExpCRef getExp_NOrI(Scope &scope);
       virtual ExpCRef getExp_Assi(Scope &scope);
       virtual ExpCRef getExp(Scope &scope);
 
@@ -247,4 +249,3 @@ namespace GDCC::CC
 }
 
 #endif//GDCC__CC__Parse_H__
-

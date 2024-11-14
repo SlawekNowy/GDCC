@@ -200,11 +200,37 @@ namespace GDCC::CC
    }
 
    //
+   // Parser::getExp_NAnd
+   //
+   SR::Exp::CRef Parser::getExp_NAnd(Scope &scope)
+   {
+      DeclExpCreate(getExp_LOrI, getExp_LOrI);
+
+      while(in.peek().tok == Core::TOK_AndQry)
+         exp = expCreate(&Factory::expCreate_NulAnd);
+
+      return exp;
+   }
+
+   //
+   // Parser::getExp_NOrI
+   //
+   SR::Exp::CRef Parser::getExp_NOrI(Scope &scope)
+   {
+      DeclExpCreate(getExp_NAnd, getExp_NAnd);
+
+      while(in.peek().tok == Core::TOK_OrIQry)
+         exp = expCreate(&Factory::expCreate_NulOrI);
+
+      return exp;
+   }
+
+   //
    // Parser::getExp_Cond
    //
    SR::Exp::CRef Parser::getExp_Cond(Scope &scope)
    {
-      auto exp = getExp_LOrI(scope);
+      auto exp = getExp_NOrI(scope);
 
       if(in.peek().tok == Core::TOK_Query)
       {
@@ -280,4 +306,3 @@ namespace GDCC::CC
 }
 
 // EOF
-

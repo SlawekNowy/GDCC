@@ -1,6 +1,6 @@
 //-----------------------------------------------------------------------------
 //
-// Copyright (C) 2013-2023 David Hill
+// Copyright (C) 2013-2023 David Hill, 2020 Zoe Elsie Watson
 //
 // See COPYING for license information.
 //
@@ -248,6 +248,8 @@ GDCC_Core_StringList(None, "None")
 GDCC_Core_StringList(Nop, "Nop")
 GDCC_Core_StringList(Not, "Not")
 GDCC_Core_StringList(Nul, "Nul")
+GDCC_Core_StringList(NulAnd, "NulAnd")
+GDCC_Core_StringList(NulOrI, "NulOrI")
 GDCC_Core_StringList(OFF, "OFF")
 GDCC_Core_StringList(ON, "ON")
 GDCC_Core_StringList(Object, "Object")
@@ -383,6 +385,7 @@ GDCC_Core_StringList(net, "net")
 GDCC_Core_StringList(no_init, "no_init")
 GDCC_Core_StringList(no_init_delay, "no_init_delay")
 GDCC_Core_StringList(nocompact, "nocompact")
+GDCC_Core_StringList(noreturn, "noreturn")
 GDCC_Core_StringList(nowadauthor, "nowadauthor")
 GDCC_Core_StringList(off, "off")
 GDCC_Core_StringList(on, "on")
@@ -459,6 +462,7 @@ GDCC_Core_StringList(TOK_And, "&")
 GDCC_Core_StringList(TOK_And2, "&&")
 GDCC_Core_StringList(TOK_And2Eq, "&&=")
 GDCC_Core_StringList(TOK_AndEq, "&=")
+GDCC_Core_StringList(TOK_AndQry, "&?")
 GDCC_Core_StringList(TOK_CmpEQ, "==")
 GDCC_Core_StringList(TOK_CmpGE, ">=")
 GDCC_Core_StringList(TOK_CmpGT, ">")
@@ -489,6 +493,7 @@ GDCC_Core_StringList(TOK_OrI, "|")
 GDCC_Core_StringList(TOK_OrI2, "||")
 GDCC_Core_StringList(TOK_OrI2Eq, "||=")
 GDCC_Core_StringList(TOK_OrIEq, "|=")
+GDCC_Core_StringList(TOK_OrIQry, "|?")
 GDCC_Core_StringList(TOK_OrX, "^")
 GDCC_Core_StringList(TOK_OrX2, "^^")
 GDCC_Core_StringList(TOK_OrX2Eq, "^^=")
@@ -527,4 +532,3 @@ GDCC_Core_StringList(TOK_DG_Hash2, "%:%:")
 #undef GDCC_Core_StringList
 
 // EOF
-

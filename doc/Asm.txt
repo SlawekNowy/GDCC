@@ -1094,6 +1094,8 @@ Syntax:
     <Mul> ( expression expression )
     <Neg> ( expression )
     <Not> ( expression )
+    <NulAnd> ( expression expression )
+    <NulOrI> ( expression expression )
     <ShL> ( expression expression )
     <ShR> ( expression expression )
     <Sub> ( expression expression )
@@ -1982,4 +1984,3 @@ Grammar
 ###############################################################################
 EOF
 ###############################################################################
-

@@ -155,6 +155,7 @@ namespace GDCC::CPP
          c = in.get();
          if(c == '=') return GDCC_Core_Token_SetStrTok(tok, AndEq);
          if(c == '&') return GDCC_Core_Token_SetStrTok(tok, And2);
+         if(c == '?') return GDCC_Core_Token_SetStrTok(tok, AndQry);
          in.unget();  return GDCC_Core_Token_SetStrTok(tok, And);
 
       case '>':
@@ -206,6 +207,7 @@ namespace GDCC::CPP
          c = in.get();
          if(c == '=') return GDCC_Core_Token_SetStrTok(tok, OrIEq);
          if(c == '|') return GDCC_Core_Token_SetStrTok(tok, OrI2);
+         if(c == '?') return GDCC_Core_Token_SetStrTok(tok, OrIQry);
          in.unget();  return GDCC_Core_Token_SetStrTok(tok, OrI);
 
       case '%':
@@ -400,4 +402,3 @@ namespace GDCC::CPP
 }
 
 // EOF
-

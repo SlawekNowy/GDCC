@@ -1,6 +1,6 @@
 //-----------------------------------------------------------------------------
 //
-// Copyright (C) 2014-2019 David Hill
+// Copyright (C) 2014-2019 David Hill, 2020 Zoe Elsie Watson
 //
 // See COPYING for license information.
 //
@@ -253,6 +253,10 @@ namespace GDCC::CC
       if(baseL->isCTypeFunction() && baseR->isCTypeFunction())
          return Exp_ConvertPtr::Create(typeL, exp, pos);
 
+      // Special handling for void* to pointer-to-function.
+      if(baseL->isCTypeFunction() && baseR->isTypeVoid())
+         return Exp_ConvertPtr::Create(typeL, exp, pos);
+
       // If converting from __str_ent* to T __str_ars*, convert to char
       // const __str_ars* first.
       if(baseR->isTypeStrEnt() && baseL->getQualAddr().base == IR::AddrBase::StrArs)
@@ -331,4 +335,3 @@ namespace GDCC::CC
 }
 
 // EOF
-

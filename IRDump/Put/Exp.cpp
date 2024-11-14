@@ -234,6 +234,8 @@ namespace GDCC::IRDump
          CasePart(Mul,    "*");
          CasePart(Neg,    "--");
          CasePart(Not,    "!");
+         CasePart(NulAnd, "&?");
+         CasePart(NulOrI, "|?");
          CasePart(ShL,    "<<");
          CasePart(ShR,    ">>");
          CasePart(Sub,    "-");
@@ -271,4 +273,3 @@ namespace GDCC::IRDump
 }
 
 // EOF
-

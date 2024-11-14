@@ -1,6 +1,6 @@
 //-----------------------------------------------------------------------------
 //
-// Copyright (C) 2013-2018 David Hill
+// Copyright (C) 2013-2018 David Hill, 2023 Alison G. Watson
 //
 // See COPYING for license information.
 //
@@ -46,6 +46,51 @@ namespace GDCC::Core
       put1: out.put(0x80 | ((in >>  0) & 0x3F));
       put0: return;
    }
+
+   //
+   // ParseHex
+   //
+   static char32_t ParseHex(std::istream &in, int max = INT_MAX)
+   {
+      char32_t n = 0;
+      char c;
+      for(int i = 0; i < max; ++i) switch(c = in.get())
+      {
+      case '0': n = n * 16 + 0x0; break;
+      case '1': n = n * 16 + 0x1; break;
+      case '2': n = n * 16 + 0x2; break;
+      case '3': n = n * 16 + 0x3; break;
+      case '4': n = n * 16 + 0x4; break;
+      case '5': n = n * 16 + 0x5; break;
+      case '6': n = n * 16 + 0x6; break;
+      case '7': n = n * 16 + 0x7; break;
+      case '8': n = n * 16 + 0x8; break;
+      case '9': n = n * 16 + 0x9; break;
+      case 'A': n = n * 16 + 0xA; break;
+      case 'B': n = n * 16 + 0xB; break;
+      case 'C': n = n * 16 + 0xC; break;
+      case 'D': n = n * 16 + 0xD; break;
+      case 'E': n = n * 16 + 0xE; break;
+      case 'F': n = n * 16 + 0xF; break;
+      case 'a': n = n * 16 + 0xa; break;
+      case 'b': n = n * 16 + 0xb; break;
+      case 'c': n = n * 16 + 0xc; break;
+      case 'd': n = n * 16 + 0xd; break;
+      case 'e': n = n * 16 + 0xe; break;
+      case 'f': n = n * 16 + 0xf; break;
+
+      default:
+         if(max != INT_MAX)
+         {
+            Error({}, "unfinished escape sequence");
+         }
+
+         in.putback(static_cast<char>(c));
+         return n;
+      }
+
+      return n;
+   }
 }
 
 
@@ -79,37 +124,9 @@ namespace GDCC::Core
       case 't': out.put('\t'); return true;
       case 'v': out.put('\v'); return true;
 
-      case 'x':
-         for(char32_t i = 0;;) switch(c = in.get())
-         {
-         case '0': i = i * 16 + 0x0; break;
-         case '1': i = i * 16 + 0x1; break;
-         case '2': i = i * 16 + 0x2; break;
-         case '3': i = i * 16 + 0x3; break;
-         case '4': i = i * 16 + 0x4; break;
-         case '5': i = i * 16 + 0x5; break;
-         case '6': i = i * 16 + 0x6; break;
-         case '7': i = i * 16 + 0x7; break;
-         case '8': i = i * 16 + 0x8; break;
-         case '9': i = i * 16 + 0x9; break;
-         case 'A': i = i * 16 + 0xA; break;
-         case 'B': i = i * 16 + 0xB; break;
-         case 'C': i = i * 16 + 0xC; break;
-         case 'D': i = i * 16 + 0xD; break;
-         case 'E': i = i * 16 + 0xE; break;
-         case 'F': i = i * 16 + 0xF; break;
-         case 'a': i = i * 16 + 0xa; break;
-         case 'b': i = i * 16 + 0xb; break;
-         case 'c': i = i * 16 + 0xc; break;
-         case 'd': i = i * 16 + 0xd; break;
-         case 'e': i = i * 16 + 0xe; break;
-         case 'f': i = i * 16 + 0xf; break;
-
-         default:
-            in.putback(static_cast<char>(c));
-            PutUTF8(out, i);
-            return true;
-         }
+      case 'x': out.put(ParseHex(in) & 0xFF);  return true;
+      case 'u': PutUTF8(out, ParseHex(in, 4)); return true;
+      case 'U': PutUTF8(out, ParseHex(in, 8)); return true;
 
       case '0': case '1': case '2': case '3':
       case '4': case '5': case '6': case '7':
@@ -250,4 +267,3 @@ namespace GDCC::Core
 }
 
 // EOF
-

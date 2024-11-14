@@ -59,6 +59,8 @@ namespace GDCC::SR
    class Exp_Mul;
    class Exp_MulSize;
    class Exp_Neg;
+   class Exp_NulAnd;
+   class Exp_NulOrI;
    class Exp_Pair;
    class Exp_ShL;
    class Exp_ShR;
@@ -100,4 +102,3 @@ namespace GDCC::SR
 }
 
 #endif//GDCC__SR__Types_H__
-

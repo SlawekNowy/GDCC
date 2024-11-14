@@ -135,6 +135,8 @@ namespace GDCC::IR
       case Core::STR_Mul:       return ExpGetIR_Mul      (in);
       case Core::STR_Neg:       return ExpGetIR_Neg      (in);
       case Core::STR_Not:       return ExpGetIR_Not      (in);
+      case Core::STR_NulAnd:    return ExpGetIR_NulAnd   (in);
+      case Core::STR_NulOrI:    return ExpGetIR_NulOrI   (in);
       case Core::STR_LogAnd:    return ExpGetIR_LogAnd   (in);
       case Core::STR_LogOrI:    return ExpGetIR_LogOrI   (in);
       case Core::STR_LogOrX:    return ExpGetIR_LogOrX   (in);
@@ -185,4 +187,3 @@ namespace GDCC::IR
 }
 
 // EOF
-

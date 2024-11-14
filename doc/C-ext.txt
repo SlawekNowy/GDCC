@@ -318,6 +318,25 @@ Semantics:
   Standard library functions shall not be called from such a function.
 
 ===========================================================
+No Return
+===========================================================
+
+Syntax:
+  attribute-noreturn:
+     attribute-noreturn-name
+
+  attribute-noreturn-name:
+     <noreturn>
+     <_Noreturn>
+
+  Constraints:
+    Shall only be applied to functions.
+
+Semantics:
+  The function will not return control flow to the caller after this function
+  finishes. Code after call of funcion marked as noreturn is considered dead.
+
+===========================================================
 Optional Args
 ===========================================================
 
@@ -1196,4 +1215,3 @@ Returns:
 ###############################################################################
 EOF
 ###############################################################################
-

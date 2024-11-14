@@ -27,6 +27,7 @@
 #include "SR/Exp/Convert.hpp"
 #include "SR/Exp/IRExp.hpp"
 #include "SR/Exp/Logical.hpp"
+#include "SR/Exp/Nullable.hpp"
 #include "SR/Type.hpp"
 
 #include <vector>
@@ -375,6 +376,26 @@ namespace GDCC::CC
    }
 
    //
+   // Factory::expCreate_NulAnd
+   //
+   SR::Exp::CRef Factory::expCreate_NulAnd(SR::Exp const *l, SR::Exp const *r,
+      Core::Origin pos)
+   {
+      auto [type, expL, expR] = expPromo_Cond(l, r, pos);
+      return SR::Exp_NulAnd::Create(type, expL, expR, pos);
+   }
+
+   //
+   // Factory::expCreate_NulOrI
+   //
+   SR::Exp::CRef Factory::expCreate_NulOrI(SR::Exp const *l, SR::Exp const *r,
+      Core::Origin pos)
+   {
+      auto [type, expL, expR] = expPromo_Cond(l, r, pos);
+      return SR::Exp_NulOrI::Create(type, expL, expR, pos);
+   }
+
+   //
    // Factory::expCreate_ShL
    //
    SR::Exp::CRef Factory::expCreate_ShL(SR::Exp const *l, SR::Exp const *r,
@@ -464,4 +485,3 @@ namespace GDCC::CC
 }
 
 // EOF
-

@@ -1,6 +1,6 @@
 //-----------------------------------------------------------------------------
 //
-// Copyright (C) 2014-2019 David Hill
+// Copyright (C) 2014-2019 David Hill, 2020 Zoe Elsie Watson
 //
 // See COPYING for license information.
 //
@@ -43,7 +43,7 @@ namespace GDCC::CC
       // Set literal object's attributes.
       SR::Attribute attr;
       attr.namePos = pos;
-      attr.type    = type->getTypeQual(SR::QualCons)->getTypeArray(val.size());
+      attr.type    = type->getTypeArray(val.size());
 
       // Create the object to store the string.
       auto obj = scope.global.getObject(attr);
@@ -140,4 +140,3 @@ namespace GDCC::CC
 }
 
 // EOF
-

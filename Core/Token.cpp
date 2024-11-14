@@ -58,6 +58,7 @@ namespace GDCC::Core
          case TOK_And2:   return STR_TOK_And2;   // &&
          case TOK_And2Eq: return STR_TOK_And2Eq; // &&=
          case TOK_AndEq:  return STR_TOK_AndEq;  // &=
+         case TOK_AndQry: return STR_TOK_AndQry; // &?
          case TOK_CmpEQ:  return STR_TOK_CmpEQ;  // ==
          case TOK_CmpGE:  return STR_TOK_CmpGE;  // >=
          case TOK_CmpGT:  return STR_TOK_CmpGT;  // >
@@ -88,6 +89,7 @@ namespace GDCC::Core
          case TOK_OrI2:   return STR_TOK_OrI2;   // ||
          case TOK_OrI2Eq: return STR_TOK_OrI2Eq; // ||=
          case TOK_OrIEq:  return STR_TOK_OrIEq;  // |=
+         case TOK_OrIQry: return STR_TOK_OrIQry; // |?
          case TOK_OrX:    return STR_TOK_OrX;    // ^
          case TOK_OrX2:   return STR_TOK_OrX2;   // ^^
          case TOK_OrX2Eq: return STR_TOK_OrX2Eq; // ^^=
@@ -127,4 +129,3 @@ namespace GDCC::Core
 }
 
 // EOF
-

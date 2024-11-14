@@ -1,6 +1,6 @@
 //-----------------------------------------------------------------------------
 //
-// Copyright (C) 2014-2023 David Hill
+// Copyright (C) 2014-2023 David Hill, 2020 Zoe Elsie Watson
 //
 // See COPYING for license information.
 //
@@ -150,6 +150,21 @@ namespace GDCC::CC
    static void ParseAttr_anonymous(Parser &, Scope &, SR::Attribute &attr)
    {
       attr.objAnonymous = true;
+   }
+
+   //
+   // ParseAttr_noreturn
+   //
+   // attribute-noreturn:
+   //    attribute-noreturn-name
+   //
+   // attribute-noreturn-name:
+   //    <noreturn>
+   //    <_Noreturn>
+   //
+   static void ParseAttr_noreturn(Parser &, Scope &, SR::Attribute &attr)
+   {
+      attr.funcNoReturn = true;
    }
 
    //
@@ -422,6 +437,9 @@ namespace GDCC::CC
 
       case Core::STR_no_init_delay: case Core::STR___no_init_delay:
          ParseAttr_no_init_delay(*this, scope, attr); break;
+         
+      case Core::STR_noreturn: case Core::STR__Noreturn:
+         ParseAttr_noreturn(*this, scope, attr); break;
 
       case Core::STR_optional_args: case Core::STR___optional_args:
          ParseAttr_optional_args(*this, scope, attr); break;
@@ -507,4 +525,3 @@ namespace GDCC::CC
 }
 
 // EOF
-

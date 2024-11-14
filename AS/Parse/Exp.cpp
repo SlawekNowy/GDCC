@@ -155,6 +155,8 @@ namespace GDCC::AS
             doE2(Mul,       STR_Mul);
             doE1(Neg,       STR_Neg);
             doE1(Not,       STR_Not);
+            doE2(NulAnd,    STR_NulAnd);
+            doE2(NulOrI,    STR_NulOrI);
             doE2(ShL,       STR_ShL);
             doE2(ShR,       STR_ShR);
             doE2(Sub,       STR_Sub);
@@ -230,6 +232,8 @@ namespace GDCC::AS
          doE2(Mul,    TOK_Mul);
          doE1(Neg,    TOK_Sub2);
          doE1(Not,    TOK_Not);
+         doE2(NulAnd, TOK_AndQry);
+         doE2(NulOrI, TOK_OrIQry);
          doE2(ShL,    TOK_ShL);
          doE2(ShR,    TOK_ShR);
          doE2(Sub,    TOK_Sub);
@@ -418,4 +422,3 @@ namespace GDCC::AS
 }
 
 // EOF
-

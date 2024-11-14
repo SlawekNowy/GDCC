@@ -66,6 +66,7 @@ namespace GDCC::Core
       TOK_And2,   // &&
       TOK_And2Eq, // &&=
       TOK_AndEq,  // &=
+      TOK_AndQry, // &?
       TOK_CmpEQ,  // ==
       TOK_CmpGE,  // >=
       TOK_CmpGT,  // >
@@ -96,6 +97,7 @@ namespace GDCC::Core
       TOK_OrI2,   // ||
       TOK_OrI2Eq, // ||=
       TOK_OrIEq,  // |=
+      TOK_OrIQry, // |?
       TOK_OrX,    // ^
       TOK_OrX2,   // ^^
       TOK_OrX2Eq, // ^^=
@@ -187,4 +189,3 @@ namespace GDCC::Core
 }
 
 #endif//GDCC__Core__Token_H__
-

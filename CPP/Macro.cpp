@@ -202,6 +202,7 @@ namespace GDCC::CPP
       case Core::STR_TOK_And2:   tok.tok = Core::TOK_And2;   break;
       case Core::STR_TOK_And2Eq: tok.tok = Core::TOK_And2Eq; break;
       case Core::STR_TOK_AndEq:  tok.tok = Core::TOK_AndEq;  break;
+      case Core::STR_TOK_AndQry: tok.tok = Core::TOK_AndQry; break;
       case Core::STR_TOK_CmpEQ:  tok.tok = Core::TOK_CmpEQ;  break;
       case Core::STR_TOK_CmpGE:  tok.tok = Core::TOK_CmpGE;  break;
       case Core::STR_TOK_CmpGT:  tok.tok = Core::TOK_CmpGT;  break;
@@ -232,6 +233,7 @@ namespace GDCC::CPP
       case Core::STR_TOK_OrI2:   tok.tok = Core::TOK_OrI2;   break;
       case Core::STR_TOK_OrI2Eq: tok.tok = Core::TOK_OrI2Eq; break;
       case Core::STR_TOK_OrIEq:  tok.tok = Core::TOK_OrIEq;  break;
+      case Core::STR_TOK_OrIQry: tok.tok = Core::TOK_OrIQry; break;
       case Core::STR_TOK_OrX:    tok.tok = Core::TOK_OrX;    break;
       case Core::STR_TOK_OrX2:   tok.tok = Core::TOK_OrX2;   break;
       case Core::STR_TOK_OrX2Eq: tok.tok = Core::TOK_OrX2Eq; break;
@@ -551,4 +553,3 @@ namespace GDCC::CPP
 }
 
 // EOF
-

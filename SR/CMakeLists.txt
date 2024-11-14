@@ -30,6 +30,7 @@ set(GDCC_SR_H
    Exp/IRExp.hpp
    Exp/Logical.hpp
    Exp/MulSize.hpp
+   Exp/Nullable.hpp
    Exp/Unary.hpp
    ExpCode.hpp
    Function.hpp
@@ -79,6 +80,7 @@ add_library(gdcc-sr-lib ${GDCC_SHARED_DECL}
    Exp/Logical.cpp
    Exp/MulSize.cpp
    Exp/Unary.cpp
+   Exp/Nullable.cpp
    Function.cpp
    GenStmnt/ArithEq.cpp
    GenStmnt/Convert.cpp
@@ -106,4 +108,3 @@ target_link_libraries(gdcc-sr-lib gdcc-ir-lib)
 GDCC_INSTALL_PART(sr SR SR FALSE TRUE)
 
 ## EOF
-

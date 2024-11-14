@@ -134,8 +134,10 @@ namespace GDCC::CC
       virtual ExpRef expCreate_LitNul(Type const *type, Origin pos);
 
       virtual ExpRef expCreate_LogAnd(Exp const *l, Exp const *r, Origin pos);
-
       virtual ExpRef expCreate_LogOrI(Exp const *l, Exp const *r, Origin pos);
+
+      virtual ExpRef expCreate_NulAnd(Exp const *l, Exp const *r, Origin pos);
+      virtual ExpRef expCreate_NulOrI(Exp const *l, Exp const *r, Origin pos);
 
       virtual ExpRef expCreate_Mem(Exp const *l, Core::String r, Origin pos,
          Scope &scope);
@@ -284,4 +286,3 @@ namespace GDCC::CC
 }
 
 #endif//GDCC__CC__Factory_H__
-

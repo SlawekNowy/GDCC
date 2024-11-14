@@ -78,6 +78,8 @@ namespace GDCC::IR
    class Exp_Mul;
    class Exp_Neg;
    class Exp_Not;
+   class Exp_NulAnd;
+   class Exp_NulOrI;
    class Exp_ShL;
    class Exp_ShR;
    class Exp_Sub;
@@ -114,4 +116,3 @@ namespace GDCC::IR
 }
 
 #endif//GDCC__IR__Types_H__
-

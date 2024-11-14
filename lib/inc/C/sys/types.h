@@ -1,6 +1,6 @@
 //-----------------------------------------------------------------------------
 //
-// Copyright(C) 2016 David Hill
+// Copyright(C) 2016 David Hill, 2020 Zoe Elsie Watson
 //
 // See COPYLIB for license information.
 //
@@ -26,6 +26,14 @@
 #ifndef __GDCC_Have__clock_t__
 #define __GDCC_Have__clock_t__
 typedef __clock_t clock_t;
+#endif
+
+//
+// mode_t
+//
+#ifndef __GDCC_Have__mode_t__
+#define __GDCC_Have__mode_t__
+typedef __mode_t mode_t;
 #endif
 
 //
@@ -61,4 +69,3 @@ typedef __time_t time_t;
 #endif
 
 #endif//__GDCC_Header__C__sys__types_h__
-
